@@ -40,7 +40,7 @@ cclp(str, cursorMove? , sendMode:=0 , sleepBeforeCursorMove := 0){
 
     while masterLoop ==1 {
         masterHock.Start()
-        masterHock.Wait()
+        masterHock.Wait(3)
             switch masterHock.EndKey {
                 case "Backspace": 
                     KeyWait("Backspace" , "L")

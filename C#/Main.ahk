@@ -238,8 +238,23 @@ varabileManger()
 
 
 ::if::{
+
+    ;if statement engine v1.0
+    ;[Laptop HQ] @xMaxrayx @Unbreakable-ray [Code : ReBorn]   at 11:33:52  on 30/3/2024   (24H Format)  (UTC +2) 	 {Can we prove we are stronger than before?}
+
+
+    ifStatementFirstWord := "if ()"
+    ifFirstMovement := "{left 1}"
+    ifSecondMovement := "{Right 1}"
+
+
+
+
+
+
+
     masterLoop:= 1
-    cclp("if ()","{left 1}", "clip" , 50)
+    cclp(ifStatementFirstWord,ifFirstMovement, "clip" , 50)
     masterHock := InputHook()
 
     
@@ -251,19 +266,20 @@ varabileManger()
 
         switch masterHock.EndKey {
             case "Space":
-                SendInput "{"
-                SendInput "`n"
-                SendInput "}"
-                SendInput "{up 1}"
+                KeyWait("space", "L")
+                SendInput ifSecondMovement
+
+                SendInput "{{}"
+                SendInput "{`n}"
+                SendInput "{Right 1}"
+                SendInput "{`n}"
+                SendInput "{}}"
                 masterLoop := 1
             default:
                 SendInput(EndmodsTranslator(masterHock.EndMods, masterHock.EndKey))
-
             
         
         }
     
 }
-    
-
 }
